@@ -117,12 +117,12 @@ SELECT
     opi.aisle,
     ppa.total_products_purchased,
     ppa.total_products_reordered,
-	ppa.average_of_times_added_to_cart,
-	dpa.total_products_purchased AS total_products_department_purchased,
-	dpa.total_unique_products_purchased AS total_unique_products_department_purchased,
-	dpa.total_products_purchased_weekdays,
-	dpa.total_products_purchased_weekends,
-	dpa.average_time_of_day_products
+    ppa.average_of_times_added_to_cart,
+    dpa.total_products_purchased AS total_products_department_purchased,
+    dpa.total_unique_products_purchased AS total_unique_products_department_purchased,
+    dpa.total_products_purchased_weekdays,
+    dpa.total_products_purchased_weekends,
+    dpa.average_time_of_day_products
 FROM order_product_info opi
 INNER JOIN product_purchase_analysis ppa ON opi.product_name = ppa.product_name
 INNER JOIN department_purchase_analysis dpa ON opi.department = dpa.department;
