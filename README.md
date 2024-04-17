@@ -5,6 +5,9 @@ The dataset has been anonymized and comprises a subset of more than 3 million gr
 
 You can download the dataset from [Kaggle](https://www.kaggle.com/competitions/instacart-market-basket-analysis/data).
 
+## Entity-Relationship (ER) Model
+![Entity-Relationship (ER) Model](https://github.com/elvarlax/ecommerce-data-model-analysis/blob/main/er_model.jpg)
+
 ## Data Model
 
 The data model consists of the following tables:
@@ -28,9 +31,9 @@ CREATE TABLE departments (
 
 CREATE TABLE products (
     product_id INTEGER PRIMARY KEY,
-    product_name VARCHAR(255),
     aisle_id INTEGER,
     department_id INTEGER,
+    product_name VARCHAR(255),
     FOREIGN KEY (aisle_id) REFERENCES aisles (aisle_id),
     FOREIGN KEY (department_id) REFERENCES departments (department_id)
 );
